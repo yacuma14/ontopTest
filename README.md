@@ -2,6 +2,9 @@
 To install the containers, the following command must be executed in the root folder (docker-compose.yml)
  - `docker-compose up -d`
 
+# Execute DB script
+ - `src/main/resources/script_table.sql`
+
 ## Run application
 mvn install
 
@@ -10,7 +13,10 @@ java -jar ontop-X.X.X.jar
 ## Configuration:  
  - `src/main/resources/application.properties`
 
-##enpoints
+## Swagger
+ - `http://localhost:8081/swagger-ui/index.html#/`
+ 
+## Enpoints
 - `Execute transfer`
 
 curl --location --request POST 'http://localhost:8081/api/v1/transaction/transfer' \
@@ -37,7 +43,7 @@ curl --location --request GET 'http://localhost:8081/api/v1/transaction/12345678
 --header 'Content-Type: application/json'
 
 
-##External enpoints
+## External enpoints
 - `get balance`
 
 curl --location --request GET 'https://be08cc0f-a8f8-4e5f-995f-8e7e37835935.mock.pstmn.io/api/v1/wallet/1234567/balance' \
